@@ -2,6 +2,25 @@ package frc.team852.utilities;
 
 /**
  * output = P × error + I × ∑error + D × error/t
+ *
+ * E is for Error!
+ * Its value is basically how much we have screwed up (can be positive OR negative - both of these represent a direction)
+ * what we want - our reality
+ *
+ * P is for Proportional!
+ * Its output will be:           \\\proportional to the Error///                                             (how far off from our Target Value we are in one instant)
+ *
+ *      It's so that if we are off of the target we can come back quickly with "appropriate" power.
+ *
+ * I is for Integral!
+ * Its output will be:           \\\proportional to the sum of all Error readings over time///                (how far off from our target value we have been, total, since the beginning)
+ *
+ *      It's so that if we are off of the target, and can't come back immediately (for whatever reason), we can continually increase our power until we steer back to it.
+ *
+ * D is for Derivative!
+ * Its output will be:           \\\proportional to the Error created during a specific amount of time///      (how far off from our target value we are becoming every second)
+ *
+ *      It's so that if we are suddenly going off course, as we are prone to, we can counteract that mistake with an equal but opposite increase in power.
  */
 
 // TODO PID Filter
